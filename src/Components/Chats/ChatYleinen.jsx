@@ -58,7 +58,7 @@ const ChatYleinen = ({ auth, firestore }) => {
     };
     
     return (
-        <main className="w-screen h-screen bg-background flex flex-col">
+        <main className="w-screen max-h-full bg-background flex flex-col">
             <Link to={"/"}>
                 <button className='absolute top-8 left-2 text-2xl font-bold text-purple rotate-180'><img src={arrow} alt="" width={50}/></button>
             </Link>
@@ -71,12 +71,13 @@ const ChatYleinen = ({ auth, firestore }) => {
                 className='w-5/6 rounded-2xl flex flex-col p-4' 
                 key={msg.id}
                 style={{ backgroundColor: msg.color }}>
-                <div className='inline-flex flex-grow items-center justify-between'>
-                    <img src={randomIcon()} alt="" width={50} />
-                    <p className='flex-grow ml-4 font-bold text-l'>{msg.text}</p>
+                <div className='inline-flex flex-grow items-center justify-between'
+                     style={{ backgroundColor: msg.color }}>
+                    <img src={randomIcon()} alt="" width={50} style={{ backgroundColor: msg.color }}/>
+                    <p className='flex-grow ml-4 font-bold text-l'style={{ backgroundColor: msg.color }}>{msg.text}</p>
                 </div>
                 <div>
-                    <p className='text-sm text-right'>{msg.createdAt?.toDate()?.toLocaleString() || 'Ladataan...'}</p>
+                    <p className='text-sm text-right'style={{ backgroundColor: msg.color }}>{msg.createdAt?.toDate()?.toLocaleString() || 'Ladataan...'}</p>
                 </div>
                 <span ref={dummy}></span>
               </div>
@@ -91,7 +92,7 @@ const ChatYleinen = ({ auth, firestore }) => {
               onChange={(e) => setNewMessage(e.target.value)} 
               placeholder="Kirjoita viesti..." 
             />
-          <button className='h-5/6 w-1/6 bg-purple rounded-2xl mr-2 flex justify-center items-center' type="submit"><img src={send} alt="" width={40}/></button>
+          <button className='h-5/6 w-1/6 bg-purple rounded-2xl mr-2 flex justify-center items-center' type="submit"><img className='bg-purple' src={send} alt="" width={40}/></button>
         </form>
         </main>
     )
