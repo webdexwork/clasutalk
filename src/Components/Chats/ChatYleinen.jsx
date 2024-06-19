@@ -3,8 +3,10 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { getAuth } from 'firebase/auth';
 import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy } from 'firebase/firestore';
+import { Link } from 'react-router-dom';
 
 import send from '../../assets/send.png'
+import arrow from '../../assets/arrow-small-right.png'
 
 import icon1 from '../../assets/icon1.png'
 import icon2 from '../../assets/icon2.png'
@@ -57,9 +59,12 @@ const ChatYleinen = ({ auth, firestore }) => {
     
     return (
         <main className="w-screen h-screen bg-background flex flex-col">
-            <h1 className="w-screen text-6xl text-center font-bold mt-8 mb-8">Yleinen</h1>
+            <Link to={"/"}>
+                <button className='absolute top-8 left-2 text-2xl font-bold text-purple rotate-180'><img src={arrow} alt="" width={50}/></button>
+            </Link>
+            <h1 className="w-screen text-4xl text-center font-bold mt-8 mb-8">Yleinen</h1>
 
-            <section className='flex flex-col items-center gap-5 w-screen h-3/6 overflow-y-scroll'>
+            <section className='flex flex-col items-center gap-5 w-screen h-4/6 overflow-y-scroll'>
             {messages && messages.map(msg => (
                 
               <div 
@@ -78,7 +83,7 @@ const ChatYleinen = ({ auth, firestore }) => {
             ))}
             </section>
 
-            <form className='bg-box fixed bottom-24 w-5/6 left-1/2 -translate-x-1/2 h-20 flex items-center justify-between rounded-3xl' onSubmit={sendMessage}>
+            <form className='bg-box fixed bottom-0 w-5/6 left-1/2 -translate-x-1/2 h-20 mb-4 flex items-center justify-between rounded-3xl' onSubmit={sendMessage}>
             <input
               className='w-4/6 h-5/6 bg-purple outline-none rounded-2xl ml-2 mr-2 font-bold text-l pl-4 flex-grow' 
               type="text"
