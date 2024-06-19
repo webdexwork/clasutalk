@@ -15,9 +15,9 @@ const Channel = (props) => {
 
 const ChatRooms = () => {
     return (
-        <main className="bg-background w-screen h-screen flex flex-col">
+        <main className="bg-background w-screen max-h-full flex flex-col">
             <h1 className="w-screen text-6xl text-center font-bold mt-8 mb-8">ChatRooms</h1>
-            <section className="w-screen h-4/6 flex flex-col">
+            <section className="w-screen flex flex-col flex-grow justify-center items-center">
                 <Link to="/yleinen">
                     <Channel img={chat} text="Yleinen"/>
                 </Link>
