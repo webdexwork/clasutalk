@@ -35,7 +35,7 @@ const StartScreen = ({ auth }) => {
             </section>
             <section className="w-screen h-24 mt-12 mb-5 flex justify-center items-center">
                 <img className="m-3 animate-bounce" src={exclamation} alt="" width={50}/>
-                <p className="bg-purple rounded-lg mr-4 mb-4 mt-4 p-4 font-bold text-l">ClasuTalkissa on vain yksi sääntö: Älä jaa ihmisten nimiä tai kuvia keskusteluissa.</p>
+                <p className="bg-purple rounded-lg mr-4 mb-4 mt-4 p-4 font-bold text-l">ClasuTalkissa on vain yksi sääntö: Älä jaa ihmisten nimiä keskusteluissa❤️</p>
             </section>
         </main>
       )
