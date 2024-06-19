@@ -6,18 +6,18 @@ import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy } fro
 
 import send from '../../assets/send.png'
 
-import icon1 from '../../assets/icon1.png'
-import icon2 from '../../assets/icon2.png'
-import icon3 from '../../assets/icon3.png'
-import icon4 from '../../assets/icon4.png'
-import icon5 from '../../assets/icon5.png'
-import icon6 from '../../assets/icon6.png'
-import icon7 from '../../assets/icon7.png'
-import icon8 from '../../assets/icon8.png'
-import icon9 from '../../assets/icon9.png'
-import icon10 from '../../assets/icon10.png'
-import icon11 from '../../assets/icon11.png'
-import icon12 from '../../assets/icon12.png'
+import icon1 from '/home/user/clasutalk/src/assets/icon1.png'
+import icon2 from '/home/user/clasutalk/src/assets/icon2.png'
+import icon3 from '/home/user/clasutalk/src/assets/icon3.png'
+import icon4 from '/home/user/clasutalk/src/assets/icon4.png'
+import icon5 from '/home/user/clasutalk/src/assets/icon5.png'
+import icon6 from '/home/user/clasutalk/src/assets/icon6.png'
+import icon7 from '/home/user/clasutalk/src/assets/icon7.png'
+import icon8 from '/home/user/clasutalk/src/assets/icon8.png'
+import icon9 from '/home/user/clasutalk/src/assets/icon9.png'
+import icon10 from '/home/user/clasutalk/src/assets/icon10.png'
+import icon11 from '/home/user/clasutalk/src/assets/icon11.png'
+import icon12 from '/home/user/clasutalk/src/assets/icon12.png'
 
 const ChatYleinen = ({ auth, firestore }) => {
 
