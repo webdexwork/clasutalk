@@ -68,14 +68,14 @@ const ChatVapaa = ({ auth, firestore }) => {
         {messages && messages.map(msg => (
 
           <div 
-            className='w-5/6 rounded-2xl flex flex-col p-4' 
+            className='w-5/6 rounded-2xl flex flex-col p-4 text-background' 
             key={msg.id}
             style={{ backgroundColor: msg.color }}>
             <span ref={dummy}></span>
             <div className='inline-flex flex-grow items-center justify-between'
                  style={{ backgroundColor: msg.color }}>
                 <img src={randomIcon()} alt="" width={50} style={{ backgroundColor: msg.color }}/>
-                <p className='flex-grow ml-4 font-bold text-l'style={{ backgroundColor: msg.color }}>{msg.text}</p>
+                <p className='flex-grow ml-4 font-bold text-l text-background'style={{ backgroundColor: msg.color }}>{msg.text}</p>
             </div>
           </div>
         ))}
