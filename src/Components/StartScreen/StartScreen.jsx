@@ -1,13 +1,11 @@
 import { signInAnonymously } from "firebase/auth"
 import { getAuth } from 'firebase/auth';
 
-import icon1 from '../../assets/icon1.png'
-import icon2 from '../../assets/icon2.png'
-import icon3 from '../../assets/icon3.png'
-import icon4 from '../../assets/icon4.png'
-import icon5 from '../../assets/icon5.png'
-import icon6 from '../../assets/icon6.png'
-import exclamation from '../../assets/exclamation-mark.png';
+import logo from '../../assets/logo.svg'
+
+import home from '../../assets/hut.png';
+import messages from '../../assets/communications.png';
+import info from '../../assets/chat.png';
 
 const StartScreen = ({ auth }) => {
     const handleSignIn = async () => {
@@ -20,23 +18,18 @@ const StartScreen = ({ auth }) => {
       };
 
       return (
-        <main className='w-screen max-h-full bg-background flex flex-col'>
-            <h1 className='text-2xl font-bold w-screen text-center mt-5 mb-5'>ClasuTalk on täysin anonyymi avoimen lähdekoodin keskustelupalsta.</h1>
-            <section className='grid grid-rows-2 grid-cols-3 gap-x-10 gap-y-4 w-fit h-fit mx-auto my-5'>
-                <img src={icon1} alt="" width={50}/>
-                <img src={icon2} alt="" width={50}/>
-                <img src={icon3} alt="" width={50}/>
-                <img src={icon4} alt="" width={50}/>
-                <img src={icon5} alt="" width={50}/>
-                <img src={icon6} alt="" width={50}/>
-            </section>
-            <section className="w-screen h-24 flex justify-center items-center">
-                <button onClick={handleSignIn} className="text-2xl font-bold bg-box rounded-full p-5 hover:bg-purple transition-all shadow-2xl shadow-purple">Siirry keskustelemaan</button>
-            </section>
-            <section className="w-screen h-24 mt-12 mb-5 flex justify-center items-center">
-                <img className="m-3 animate-bounce" src={exclamation} alt="" width={50}/>
-                <p className="bg-purple rounded-lg mr-4 mb-4 mt-4 p-4 font-bold text-l">ClasuTalkissa on vain yksi sääntö: Älä jaa ihmisten nimiä keskusteluissa❤️</p>
-            </section>
+        <main className="flex flex-col">
+          <img className="w-5/6 mx-auto" src={logo} alt="" />
+          <h1 className="text-5xl font-bold text-center">ClasuTalk.</h1>
+          <p className="text-center w-3/6 mx-auto my-5">Täysin anonyymi keskustelupalsta Clasulaisille.</p>
+
+          <button onClick={handleSignIn} className="bg-box w-4/6 h-16 rounded-2xl mx-auto text-white text-background">Eteenpäin 🚀</button>
+
+          <footer className="w-screen h-20 bg-box absolute bottom-0 flex justify-around items-center">
+            <img className="bg-box" src={home} alt="" width={30}/>
+            <img className="bg-box" src={messages} alt="" width={30}/>
+            <img className="bg-box" src={info} alt="" width={30}/>
+          </footer>
         </main>
       )
 }

@@ -6,12 +6,12 @@ export default {
   ],
   theme: {
     colors: {
-      'background': '#545454',
-      'box': '#404040',
-      'purple': '#8C52FF'
+      'background': '#ebebeb',
+      'box': '#5A90FE',
+      'text': '#545454'
     },
     fontFamily: {
-      'plex': ["IBM Plex Mono", "monospace;"],
+      'poppins': ["Poppins", "sans-serif"],
     },
     screens: {
       'sm': '640px',

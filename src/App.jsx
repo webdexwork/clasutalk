@@ -46,8 +46,8 @@ function App() {
           <Routes> 
             <Route path="/" element={user ? <ChatRooms /> : <StartScreen auth={auth} />} />
             <Route path="/yleinen" element={<ChatYleinen auth={auth} firestore={firestore}/>} />
-            <Route path="/opiskelu" element={<ChatOpiskelu/>} />
-            <Route path="/vapaa" element={<ChatVapaa/>} />
+            <Route path="/opiskelu" element={<ChatOpiskelu auth={auth} firestore={firestore}/>} />
+            <Route path="/vapaa" element={<ChatVapaa auth={auth} firestore={firestore}/>} />
             <Route path="/info" element={<Info/>} />
           </Routes>
 
