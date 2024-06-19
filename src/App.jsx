@@ -51,7 +51,7 @@ function App() {
             <Route path="/info" element={<Info/>} />
           </Routes>
 
-          <footer className="w-96 h-20 bg-purple fixed bottom-0 left-1/2 -translate-x-1/2 rounded-t-3xl flex justify-evenly items-center">
+          <footer className="w-5/6 h-20 bg-purple fixed bottom-0 left-1/2 -translate-x-1/2 rounded-t-3xl flex justify-evenly items-center">
             <Link to={"/"}>
               <div className="flex flex-col items-center">
                 <img src={chat} alt="" width={40}/>

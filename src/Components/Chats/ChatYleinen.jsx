@@ -60,15 +60,15 @@ const ChatYleinen = ({ auth, firestore }) => {
         <main className="w-screen h-screen bg-background flex flex-col">
             <h1 className="w-screen text-6xl text-center font-bold mt-8 mb-8">Yleinen</h1>
 
-            <section className='flex flex-col items-center gap-5 w-screen h-4/6 overflow-y-scroll'>
+            <section className='flex flex-col items-center gap-5 w-screen h-3/6 overflow-y-scroll'>
             {messages && messages.map(msg => (
                 
               <div 
-                className='w-96 rounded-2xl flex flex-col p-4' 
+                className='w-5/6 rounded-2xl flex flex-col p-4' 
                 key={msg.id}
                 style={{ backgroundColor: msg.color }}>
                 <div className='inline-flex flex-grow items-center justify-between'>
-                    <img src={msg.icon} alt="" width={75} />
+                    <img src={msg.icon} alt="" width={50} />
                     <p className='flex-grow ml-4 font-bold text-l'>{msg.text}</p>
                 </div>
                 <div>
@@ -79,7 +79,7 @@ const ChatYleinen = ({ auth, firestore }) => {
             ))}
             </section>
 
-            <form className='bg-box fixed bottom-24 w-96 h-20 flex ml-6 mr-6 items-center justify-between rounded-3xl' onSubmit={sendMessage}>
+            <form className='bg-box fixed bottom-24 w-5/6 left-1/2 -translate-x-1/2 h-20 flex items-center justify-between rounded-3xl' onSubmit={sendMessage}>
             <input
               className='w-4/6 h-5/6 bg-purple outline-none rounded-2xl ml-2 mr-2 font-bold text-l pl-4 flex-grow' 
               type="text"
