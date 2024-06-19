@@ -1,5 +1,5 @@
 import { signInAnonymously } from "firebase/auth"
-import { getAuth } from 'firebase/auth';
+import { Link } from 'react-router-dom'
 
 import logo from '../../assets/logo.svg'
 
@@ -23,12 +23,14 @@ const StartScreen = ({ auth }) => {
           <h1 className="text-5xl font-bold text-center">ClasuTalk.</h1>
           <p className="text-center w-3/6 mx-auto my-5">Täysin anonyymi keskustelupalsta Clasulaisille.</p>
 
-          <button onClick={handleSignIn} className="bg-box w-4/6 h-16 rounded-2xl mx-auto text-white text-background">Eteenpäin 🚀</button>
+          <button onClick={handleSignIn} className="bg-box w-4/6 h-16 rounded-2xl mx-auto text-white text-background drop-shadow-2xl">Eteenpäin 🚀</button>
 
           <footer className="w-screen h-20 bg-box absolute bottom-0 flex justify-around items-center">
             <img className="bg-box" src={home} alt="" width={30}/>
-            <img className="bg-box" src={messages} alt="" width={30}/>
-            <img className="bg-box" src={info} alt="" width={30}/>
+            <img onClick={handleSignIn} className="bg-box" src={messages} alt="" width={30}/>
+            <Link to={"/info"}>
+              <img className="bg-box" src={info} alt="" width={30}/>
+            </Link>
           </footer>
         </main>
       )
