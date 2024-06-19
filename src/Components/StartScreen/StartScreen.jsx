@@ -20,7 +20,7 @@ const StartScreen = ({ auth }) => {
       };
 
       return (
-        <main className='w-screen h-screen bg-background flex flex-col'>
+        <main className='w-screen max-h-full bg-background flex flex-col'>
             <h1 className='text-2xl font-bold w-screen text-center mt-5 mb-5'>ClasuTalk on täysin anonyymi avoimen lähdekoodin keskustelupalsta.</h1>
             <section className='grid grid-rows-2 grid-cols-3 gap-x-10 gap-y-4 w-fit h-fit mx-auto my-5'>
                 <img src={icon1} alt="" width={50}/>

@@ -41,7 +41,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <main className="w-screen h-screen">
+        <main className="w-screen max-h-full">
 
           <Routes> 
             <Route path="/" element={user ? <ChatRooms /> : <StartScreen auth={auth} />} />
