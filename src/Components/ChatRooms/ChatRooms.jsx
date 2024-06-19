@@ -1,13 +1,13 @@
-import logo from '../../assets/logo.svg'
 import messages from '../../assets/communications.png';
 import info from '../../assets/chat.png';
+import arrow from '../../assets/arrow.png';
 
 import { Link } from 'react-router-dom';
 
 const Channel = (props) => {
     return (
         <section className='flex justify-center my-2.5'>
-            <img src={logo} alt=""  width={75}/>
+            <img src={arrow} alt="" className='w-8 h-8 my-auto mr-2 ml-2'/>
             <div className="bg-box w-4/6 h-20 rounded-3xl flex items-center">
                 <h1 className='text-2xl font-bold bg-box text-background flex-grow text-center'>{props.channel}</h1>
             </div>

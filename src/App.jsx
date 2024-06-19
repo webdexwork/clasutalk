@@ -4,7 +4,7 @@ import Info from "./Components/Info/Info.jsx";
 
 import ChatYleinen from "./Components/Chats/ChatYleinen.jsx";
 import ChatOpiskelu from "./Components/Chats/ChatOpiskelu.jsx";
-import ChatVapaa from "./Components/Chats/ChatVapaa.jsx";
+import ChatVapaa from "./Components/Chats/ChatKysy.jsx";
 
 import chat from './assets/bubble-chat.png'
 import info from './assets/info.png'

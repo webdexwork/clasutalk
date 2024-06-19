@@ -6,7 +6,7 @@ import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy } fro
 import { Link } from 'react-router-dom';
 
 import send from '../../assets/send.png'
-import arrow from '../../assets/arrow-small-right.png'
+import arrow from '../../assets/arrow.png'
 
 import icon1 from '../../assets/icon1.png'
 import icon2 from '../../assets/icon2.png'
@@ -54,32 +54,29 @@ const ChatYleinen = ({ auth, firestore }) => {
         color: randomColor(),
       });
       setNewMessage('');
-
+      dummy.current.scrollIntoView({ behavior: 'smooth' });
     };
     
     return (
         <main className="w-screen max-h-full bg-background flex flex-col">
             <Link to={"/"}>
-                <button className='absolute top-8 left-2 text-2xl font-bold text-purple rotate-180'><img src={arrow} alt="" width={50}/></button>
+                <button className='absolute top-8 left-2 text-2xl font-bold text-purple rotate-180'><img src={arrow} alt="" width={30}/></button>
             </Link>
             <h1 className="w-screen text-4xl text-center font-bold mt-8 mb-8">Yleinen</h1>
 
-            <section className='flex flex-col items-center gap-5 w-screen h-4/6 overflow-y-scroll'>
+            <section className='flex flex-col-reverse items-center gap-8 w-screen max-h-[calc(100vh-220px)] overflow-y-auto'>
             {messages && messages.map(msg => (
                 
               <div 
                 className='w-5/6 rounded-2xl flex flex-col p-4' 
                 key={msg.id}
                 style={{ backgroundColor: msg.color }}>
+                <span ref={dummy}></span>
                 <div className='inline-flex flex-grow items-center justify-between'
                      style={{ backgroundColor: msg.color }}>
                     <img src={randomIcon()} alt="" width={50} style={{ backgroundColor: msg.color }}/>
                     <p className='flex-grow ml-4 font-bold text-l'style={{ backgroundColor: msg.color }}>{msg.text}</p>
                 </div>
-                <div>
-                    <p className='text-sm text-right'style={{ backgroundColor: msg.color }}>{msg.createdAt?.toDate()?.toLocaleString() || 'Ladataan...'}</p>
-                </div>
-                <span ref={dummy}></span>
               </div>
             ))}
             </section>
@@ -90,9 +87,9 @@ const ChatYleinen = ({ auth, firestore }) => {
               type="text"
               value={newMessage} 
               onChange={(e) => setNewMessage(e.target.value)} 
-              placeholder="Kirjoita viesti..." 
+              placeholder="Kerro meille jotain..." 
             />
-          <button className='h-5/6 w-1/6 bg-purple rounded-2xl mr-2 flex justify-center items-center' type="submit"><img className='bg-purple' src={send} alt="" width={40}/></button>
+          <button className='h-5/6 w-1/6 bg-purple rounded-2xl mr-2 flex justify-center items-center' type="submit"><img className='bg-box' src={send} alt="" width={40}/></button>
         </form>
         </main>
     )
