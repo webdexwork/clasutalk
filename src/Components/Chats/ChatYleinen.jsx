@@ -50,7 +50,6 @@ const ChatYleinen = ({ auth, firestore }) => {
         uid,
         createdAt: serverTimestamp(),
         color: randomColor(),
-        icon: randomIcon(),
       });
       setNewMessage('');
 
@@ -68,7 +67,7 @@ const ChatYleinen = ({ auth, firestore }) => {
                 key={msg.id}
                 style={{ backgroundColor: msg.color }}>
                 <div className='inline-flex flex-grow items-center justify-between'>
-                    <img src={msg.icon} alt="" width={50} />
+                    <img src={randomIcon()} alt="" width={50} />
                     <p className='flex-grow ml-4 font-bold text-l'>{msg.text}</p>
                 </div>
                 <div>
