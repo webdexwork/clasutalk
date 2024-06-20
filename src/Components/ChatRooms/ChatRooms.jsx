@@ -25,7 +25,6 @@ const ChatRooms = () => {
                 <Link to={"/yleinen"}><Channel channel='Yleinen'/></Link>
                 <Link to={"/opiskelu"}><Channel channel='kouluhommat'/></Link>
                 <Link to={"/vapaa"}><Channel channel='Kysy!'/></Link>
-                <Link><Channel channel='Clasuihastukset'/></Link>
             </motion.div>
 
             <motion.footer className="w-screen h-20 bg-box absolute bottom-0 flex justify-around items-center" initial={{width: 0, opacity: 0}} animate={{width: '100%', opacity: 1}} exit={{x: window.innerWidth, transition: {duration: 0.1}, opacity: 0}}>
