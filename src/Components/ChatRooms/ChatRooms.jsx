@@ -25,6 +25,12 @@ const ChatRooms = () => {
                 <Link to={"/yleinen"}><Channel channel='Yleinen'/></Link>
                 <Link to={"/opiskelu"}><Channel channel='kouluhommat'/></Link>
                 <Link to={"/vapaa"}><Channel channel='Kysy!'/></Link>
+                <section className='flex justify-center my-2.5'>
+                    <img src={arrow} alt="" className='w-8 h-8 my-auto mr-2 ml-2'/>
+                    <div className="bg-box w-4/6 h-20 rounded-3xl flex items-center">
+                        <h1 className='text-sm font-bold bg-box text-background flex-grow text-center'><a className='bg-box' target='blank' href="https://studymanager.vercel.app/">random projekti: StudyManager</a></h1>
+                    </div>
+                </section>
             </motion.div>
 
             <motion.footer className="w-screen h-20 bg-box absolute bottom-0 flex justify-around items-center" initial={{width: 0, opacity: 0}} animate={{width: '100%', opacity: 1}} exit={{x: window.innerWidth, transition: {duration: 0.1}, opacity: 0}}>
