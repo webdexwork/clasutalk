@@ -20,7 +20,7 @@ const Channel = (props) => {
 const ChatRooms = () => {
     return (
         <main className='flex flex-col'>
-            <motion.h1 className='text-4xl font-bold text-center my-4' initial={{width: 0}} animate={{width: '100%'}} exit={{x: window.innerWidth, transition: {duration: 0.1}}}>Palstat.</motion.h1>
+            <h1 className='text-4xl font-bold text-center my-4' initial={{width: 0}} animate={{width: '100%'}} exit={{x: window.innerWidth, transition: {duration: 0.1}}}>Palstat.</h1>
             <motion.div initial={{width: 0, opacity: 0}} animate={{width: '100%', opacity: 1}} exit={{x: window.innerWidth, transition: {duration: 0.1}, opacity: 0}}>
                 <Link to={"/yleinen"}><Channel channel='Yleinen'/></Link>
                 <Link to={"/opiskelu"}><Channel channel='kouluhommat'/></Link>
