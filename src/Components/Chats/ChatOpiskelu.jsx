@@ -66,7 +66,7 @@ const ChatOpiskelu = ({ auth, firestore }) => {
       </Link>
       <h1 className="fixed top-4 w-screen text-4xl text-center font-bold z-1">Kouluhommat</h1>
 
-      <section className='flex flex-col-reverse items-center gap-8 w-screen max-h-[calc(100vh-220px)] overflow-y-auto'>
+      <section className='flex flex-col-reverse items-center gap-8 mt-24 w-screen max-h-[calc(100vh-220px)] overflow-y-auto'>
       {messages && messages.map(msg => (
           
         <motion.div
