@@ -2,6 +2,8 @@ import messages from '../../assets/communications.png';
 import info from '../../assets/chat.png';
 import arrow from '../../assets/arrow.png';
 
+import { motion } from 'framer-motion';
+
 import { Link } from 'react-router-dom';
 
 const Channel = (props) => {
@@ -18,19 +20,20 @@ const Channel = (props) => {
 const ChatRooms = () => {
     return (
         <main className='flex flex-col'>
-            <h1 className='text-4xl font-bold text-center my-4'>Palstat.</h1>
-            
-            <Link to={"/yleinen"}><Channel channel='Yleinen'/></Link>
-            <Link to={"/opiskelu"}><Channel channel='kouluhommat'/></Link>
-            <Link to={"/vapaa"}><Channel channel='Kysy!'/></Link>
-            <Link><Channel channel='Clasuihastukset'/></Link>
+            <motion.h1 className='text-4xl font-bold text-center my-4' initial={{width: 0}} animate={{width: '100%'}} exit={{x: window.innerWidth, transition: {duration: 0.1}}}>Palstat.</motion.h1>
+            <motion.div initial={{width: 0, opacity: 0}} animate={{width: '100%', opacity: 1}} exit={{x: window.innerWidth, transition: {duration: 0.1}, opacity: 0}}>
+                <Link to={"/yleinen"}><Channel channel='Yleinen'/></Link>
+                <Link to={"/opiskelu"}><Channel channel='kouluhommat'/></Link>
+                <Link to={"/vapaa"}><Channel channel='Kysy!'/></Link>
+                <Link><Channel channel='Clasuihastukset'/></Link>
+            </motion.div>
 
-            <footer className="w-screen h-20 bg-box absolute bottom-0 flex justify-around items-center">
+            <motion.footer className="w-screen h-20 bg-box absolute bottom-0 flex justify-around items-center" initial={{width: 0, opacity: 0}} animate={{width: '100%', opacity: 1}} exit={{x: window.innerWidth, transition: {duration: 0.1}, opacity: 0}}>
                 <img className="bg-box" src={messages} alt="" width={30}/>
                 <Link to={"/info"}>
                     <img className="bg-box" src={info} alt="" width={30}/>
                 </Link>
-            </footer>
+            </motion.footer>
         </main>
     )
 }

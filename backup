@@ -1,0 +1,4 @@
+              <Route path="/yleinen" element={<ChatYleinen auth={auth} firestore={firestore}/>} />
+              <Route path="/opiskelu" element={<ChatOpiskelu auth={auth} firestore={firestore}/>} />
+              <Route path="/vapaa" element={<ChatVapaa auth={auth} firestore={firestore}/>} />
+              <Route path="/info" element={<Info/>} />

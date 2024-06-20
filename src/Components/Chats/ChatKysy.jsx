@@ -4,6 +4,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { getAuth } from 'firebase/auth';
 import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import send from '../../assets/send.png'
 import arrow from '../../assets/arrow.png'
@@ -62,35 +63,36 @@ const ChatVapaa = ({ auth, firestore }) => {
         <Link to={"/"}>
             <button className='absolute top-8 left-2 text-2xl font-bold text-purple rotate-180'><img src={arrow} alt="" width={30}/></button>
         </Link>
-        <h1 className="w-screen text-4xl text-center font-bold mt-8 mb-8">Kysy!</h1>
+        <motion.h1 className="w-screen text-4xl text-center font-bold mt-4 mb-8" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0, transition: {duration: 0.075}}}>Kysy</motion.h1>
 
         <section className='flex flex-col-reverse items-center gap-8 w-screen max-h-[calc(100vh-220px)] overflow-y-auto'>
         {messages && messages.map(msg => (
 
-          <div 
-            className='w-5/6 rounded-2xl flex flex-col p-4 text-background' 
-            key={msg.id}
-            style={{ backgroundColor: msg.color }}>
-            <span ref={dummy}></span>
-            <div className='inline-flex flex-grow items-center justify-between'
-                 style={{ backgroundColor: msg.color }}>
-                <img src={randomIcon()} alt="" width={50} style={{ backgroundColor: msg.color }}/>
-                <p className='flex-grow ml-4 font-bold text-l text-background'style={{ backgroundColor: msg.color }}>{msg.text}</p>
-            </div>
+        <motion.div
+          initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0, transition: {duration: 0.075}}}
+          className='w-5/6 rounded-2xl flex flex-col p-4' 
+          key={msg.id}
+          style={{ backgroundColor: msg.color }}>
+          <span ref={dummy}></span>
+          <div className='inline-flex flex-grow items-center justify-between'
+               style={{ backgroundColor: msg.color }}>
+              <img src={randomIcon()} alt="" width={50} style={{ backgroundColor: msg.color }}/>
+              <p className='flex-grow ml-4 font-bold text-l text-background'style={{ backgroundColor: msg.color }}>{msg.text}</p>
           </div>
+        </motion.div>
         ))}
         </section>
 
-        <form className='bg-box fixed bottom-0 w-5/6 left-1/2 -translate-x-1/2 h-20 mb-4 flex items-center justify-between rounded-3xl' onSubmit={sendMessage}>
-        <input
-          className='w-4/6 h-5/6 bg-purple outline-none rounded-2xl ml-2 mr-2 font-bold text-l pl-4 flex-grow' 
-          type="text"
-          value={newMessage} 
-          onChange={(e) => setNewMessage(e.target.value)} 
-          placeholder="Kysy jotain..." 
-        />
-      <button className='h-5/6 w-1/6 bg-purple rounded-2xl mr-2 flex justify-center items-center' type="submit"><img className='bg-box' src={send} alt="" width={40}/></button>
-    </form>
+        <motion.form initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0, transition: {duration: 0.075}}} className='bg-box fixed bottom-0 w-5/6 left-1/2 -translate-x-1/2 h-20 mb-4 flex items-center justify-between rounded-3xl' onSubmit={sendMessage}>
+            <input
+              className='w-4/6 h-5/6 bg-purple outline-none rounded-2xl ml-2 mr-2 font-bold text-l pl-4 flex-grow' 
+              type="text"
+              value={newMessage} 
+              onChange={(e) => setNewMessage(e.target.value)} 
+              placeholder="Kerro meille jotain..." 
+            />
+            <button className='h-5/6 w-1/6 bg-purple rounded-2xl mr-2 flex justify-center items-center' type="submit"><img className='bg-box' src={send} alt="" width={40}/></button>
+        </motion.form>
     </main>
     )
 }
