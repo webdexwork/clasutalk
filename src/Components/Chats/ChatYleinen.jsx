@@ -62,11 +62,11 @@ const ChatYleinen = ({ auth, firestore }) => {
     return (
         <main className="w-screen max-h-full bg-background flex flex-col">
             <Link to={"/"}>
-                <button className='absolute top-8 left-2 text-2xl font-bold text-purple rotate-180'><img src={arrow} alt="" width={30}/></button>
+                <button className='absolute z-10 top-8 left-2 text-2xl font-bold text-purple rotate-180'><img src={arrow} alt="" width={30}/></button>
             </Link>
-            <h1 className="w-screen text-4xl text-center font-bold mt-4 mb-8">Yleinen</h1>
+            <h1 className="fixed top-4 w-screen text-4xl text-center font-bold z-1">Yleinen</h1>
 
-            <section className='flex flex-col-reverse items-center gap-8 w-screen max-h-[calc(100vh-220px)] overflow-y-auto'>
+            <section className='flex flex-col-reverse items-center gap-8 w-screen mt-24 max-h-[calc(100vh-220px)] overflow-y-auto'>
             {messages && messages.map(msg => (
                 
               <div

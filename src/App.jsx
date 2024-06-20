@@ -1,15 +1,5 @@
-import StartScreen from "./Components/StartScreen/StartScreen.jsx";
-import ChatRooms from "./Components/ChatRooms/ChatRooms.jsx";
-import Info from "./Components/Info/Info.jsx";
-
 import AnimatedRoutes from "./Components/AnimatedRoutes.jsx";
-
-import ChatYleinen from "./Components/Chats/ChatYleinen.jsx";
-import ChatOpiskelu from "./Components/Chats/ChatOpiskelu.jsx";
-import ChatVapaa from "./Components/Chats/ChatKysy.jsx";
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { BrowserRouter } from 'react-router-dom';
 
 
 //Importing firebase libraries
