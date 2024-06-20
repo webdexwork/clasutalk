@@ -13,7 +13,7 @@ const Info = () => {
                 <ul className='list-disc list-inside text-l text-center w-screen mx-auto'>
                     <li className='m-5 font-semibold'>Kyseessä on täysin henkilökohtainen kooduasprojekti, eikä tarkoituksena ole kaupallistaa mitään.</li>
                     <li className='m-5 font-semibold'>Projektin ei ole tarkoitus kannustaa ihmisiä anonyymiin vihapuheeseen, eikä projektin tarkoitus ole täten ketään loukata.</li>
-                    <li className='m-5 font-semibold'>Sivusto ei kerää minkäänlaista dataa osallistujista, ja perustuu täyteen anonymiteettiin tehden keskustelupalstasta äärimmäisen vapaamuotoisen.</li>
+                    <li className='m-5 font-semibold'>Sivusto ei kerää minkäänlaista dataa osallistujista, ja perustuu täyteen anonymiteettiin, ethän silti jaa ihmisten nimiä keskusteluissa.</li>
                     <p className='font-bold text-xl'>ClasuTalk 1.0❤️</p>
                 </ul>
             </section>
