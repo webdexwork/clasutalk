@@ -1,6 +1,8 @@
 import AnimatedRoutes from "./Components/AnimatedRoutes.jsx";
 import { BrowserRouter } from 'react-router-dom';
 
+import { Analytics } from "@vercel/analytics/react"
+
 
 //Importing firebase libraries
 import { initializeApp } from 'firebase/app';
@@ -31,11 +33,14 @@ function App() {
   const [user] = useAuthState(auth);
 
   return (
+    <>
       <BrowserRouter>
         <main className="w-screen max-h-full">
           <AnimatedRoutes/>
         </main>
       </BrowserRouter>
+      <Analytics/>
+    </>
   )
 }
 
